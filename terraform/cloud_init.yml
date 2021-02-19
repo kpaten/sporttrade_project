@@ -1,0 +1,19 @@
+#cloud-config
+# vim: syntax=yaml
+#
+runcmd:
+ - [ ls, -l, / ]
+ - [ sh, -xc, "echo $(date) ': hello world!'" ]
+ssh_pwauth: True
+chpasswd:
+  list: |
+     root:password
+  expire: False
+users:
+  - name: kpaten # Change me
+    ssh_authorized_keys:
+      - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQC/C2rIwE/bAuRZVquO3XDVsrv8dqGZLqsY1v9yPcj8dsdXu2vmNCTC3H2R4ytG3ozRNOAD5uNeCcvuVVzvsTGt1M/52vV+Jp29hBzfRQaLjX3xIB/cr5ol2F4HkN1TEBwVTkyPFAHxXPWl5tq6bgi3tgjoTzfCQ/0/yiTZzr54mK6DfD/jHdLnRR3F+rEyMaOGOxbIxM62abJNHJ9HDUPjXN3PPNtUB7D9uqvVnhKl0l478rHZXA47tGiDHciLhbQ0yR8XLjI1Neg3LEzMJG7/7nswcfmGjvNqsgZDAONN0PyGctwmH5VEBbJahFxI8MweTd3ldcEBOA9w/mQwIR7eKeSke5FY4eyaXLkoFD8o7QQWtApALnxSe3xk8D0TG7KA6UcnqzZN1MjAlzOnSHATNKZCIGm29LigD7FL07MoyUExG3cOwgDl4ChGqHWy1y5zumc5qPDGyQf+3VlCHrQBq+F0210bx7JCryNoNFRiQjTZkIopKG/5As8E2TB8NLE= kpaten@Grimoire  #Chageme
+    sudo: ALL=(ALL) NOPASSWD:ALL
+    shell: /bin/bash
+    home: /home/kpaten
+    groups: wheel

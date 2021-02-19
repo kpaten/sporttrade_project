@@ -1,2 +1,2 @@
 # sporttrade_project
-Repo created for Sporttrade IaC Project
+Repo created for Sporttrade IaC Project. I used this exercise to create my kvm enviornment on my ubiuntu laptop and from there use terraform, ansible, and cloud init to pull and deploy a CentOS image (terraform), add user information to the instance via password and ssh keys (cloud-init) and then provision Nginx on it(ansible). This is something I can re-use going forward so thanks for this project as this helped me finally get something done I have been meaning to do for awhile :-). 
