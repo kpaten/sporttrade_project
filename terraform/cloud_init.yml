@@ -1,9 +1,9 @@
 #cloud-config
 # vim: syntax=yaml
 #
-runcmd:
- - [ ls, -l, / ]
- - [ sh, -xc, "echo $(date) ': hello world!'" ]
+#runcmd:
+# - [ ls, -l, / ]
+# - [ sh, -xc, "echo $(date) ': hello world!'" ]
 ssh_pwauth: True
 chpasswd:
   list: |
